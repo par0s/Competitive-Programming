@@ -6,12 +6,10 @@ class Solution:
             for j in range(len(grid[0])):
                 if i == 0 and j == 0:
                     continue
-                if i == 0:
-                    #print(grid[i][j],grid[i][j - 1],end = " ")
+                if i == 0:                    
                     grid[i][j] += grid[i][j - 1]                  
                 elif j == 0:
                     grid[i][j] += grid[i - 1][j] 
                 else:
-                    grid[i][j] += min(grid[i][j - 1],grid[i - 1][j]) 
-                #print(grid,(i,j),grid[i][j])
+                    grid[i][j] += min(grid[i][j - 1],grid[i - 1][j])                 
         return grid[i][j]
